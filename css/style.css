@@ -1,0 +1,12 @@
+body{
+  overflow:hidden;
+}
+
+.scroll{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  height: 90vh;
+}
+.deleted{}
+

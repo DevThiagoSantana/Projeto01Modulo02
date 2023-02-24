@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVTips</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+          crossorigin="anonymous">
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+          href="./css/style.css">
+
+</head>
+
+  <body>    
+    <main class ="d-flex flex-nowrap">
+      <form class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="height: 100vh;" >
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> DEVTips</i>         
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <div class="nav-item">
+            <a href="#" class="nav-link text-white" >              
+                <label for="title"></label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Título:</span>
+                  <input type="text" class="form-control" placeholder="Título" aria-label="Título" aria-describedby="basic-addon1"id="title" name="title" minlength="5" maxlength="50" required>                  
+                </div>  
+                <div id="alert-title"></div>              
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">              
+                <label for="language"></label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Linguagem/Skill:</span>
+                  <input type="text" class="form-control" placeholder="Linguagem/Skill" aria-label="Linguagem/Skill" aria-describedby="basic-addon1" id="language" name="language" minlength="2" maxlength="20" required>                  
+                </div>
+                <div id="alert-language"></div>              
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">  
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="category">Categoria:</label>
+                <select class="form-select" id="category" name="category">
+                  <option value="" selected>Selecione...</option>
+                  <option value="FrontEnd">FrontEnd</option>
+                <option value="BackEnd">BackEnd</option>
+                <option value="FullStack">FullStack</option>
+                <option value="SoftSkill">SoftSkill</option>
+                </select>                
+              </div>     
+              <div id="alert-category"></div>         
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">
+              
+                <label for="description"></label>
+                  <div class="input-group">
+                  <span class="input-group-text">Descrição:</span>
+                  <textarea class="form-control" aria-label="Descrição" id="description" name="description" minlength="10" maxlength="600" required></textarea>
+                </div>
+                <div id="alert-description"></div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">
+              <div class="mb-3">
+                <label for="youtube" class="form-label"></label>
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon3">Vídeo do YouTube:</span>
+                  <input type="url" class="form-control" id="youtube" aria-describedby="basic-addon3">
+                </div>
+                <div class="form-text">Adicione aqui o Link do Video</div>
+              </div>
+              <div id="alert-youtube"></div>            
+              
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">
+              <button class="btn btn-light" type="submit" id="save">Salvar</button>
+              <button class="btn btn-light" type="reset" id="clear">Limpar</button>
+            </a>
+            <div id="alert-save"></div>
+          </div>
+        </ul>
+        <hr>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://avatars.githubusercontent.com/u/113400543?s=400&u=39c7f96e4a5f772f4757c3bbf1a6fc0b64923f76&v=4" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong>Thiago de Santana</strong>
+            </a>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="https://github.com/DevThiagoSantana">Profile Contact</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+         
+    
+      </form>
+     <div class="" style="width: 100%;">
+      <nav class="navbar navbar-expand-lg bg-success ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> DEVTips</i> 
+          </a>
+          <a class=" row ">
+        
+          <a class="btn btn-light disabled"  role="button" aria-disabled="true">Total: <div class="justify-content-center" id="item-total-count"></div></a>          
+          <a class="btn btn-light disabled"  role="button" aria-disabled="true">FrontEnd: <div class="justify-content-center" id="item-FrontEnd"></div></a>     
+          <a class="btn btn-light disabled"  role="button" aria-disabled="true">BackEnd: <div class="justify-content-center" id="item-BackEnd"></div></a>
+          <a class="btn btn-light disabled"  role="button" aria-disabled="true">FullStack: <div class="justify-content-center" id="item-FullStack"></div></a>
+          <a class="btn btn-light disabled"  role="button" aria-disabled="true">SoftSkill: <div class="justify-content-center" id="item-SoftSkill"></div></a>
+          
+      
+      </a>
+      
+        <form class="d-flex p-2" role="search">
+          <input class="form-control me-2" style="width: 50%;" name="inputSearch" id="inputSearch"type="search" placeholder="Procurar" aria-label="Procurar">
+          <button class="btn btn-outline-light" type="submit" id="search">Procurar</button>
+        </form>
+
+      </div >
+      </nav >
+  
+        <div class="scroll" id="cards-dicas">
+                        
+        </div>
+      </div>
+      </div>
+      
+      <!-- Modal Editor -->
+     
+      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class = "modal-dialog">
+          <div class="modal-content text-bg-dark">
+            <div class=" modal-header">
+              <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> DEVTips - Editar Dicas</i>  
+              <button type="button" class="btn btn-close btn-light" data-bs-dismiss ="modal"></button>
+            </div>
+            
+        <div class="modal-body" >
+          <div class="nav-item "">
+            <a href="#" class="nav-link text-white >              
+                <label for="title"></label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text " id="basic-addon1">Título:</span>
+                  <input type="text" class="form-control" placeholder=${dica.title} aria-label="Título" aria-describedby="basic-addon1"id="title" name="title" minlength="5" maxlength="50" required>                  
+                </div>
+                <div id="alert-title"></div>                
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">              
+                <label for="language"></label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Linguagem/Skill:</span>
+                  <input type="text" class="form-control" placeholder="Linguagem/Skill" aria-label="Linguagem/Skill" aria-describedby="basic-addon1" id="language" name="language" minlength="2" maxlength="20" required>              
+                </div>
+                <div id="alert-language"></div>              
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">  
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="category">Categoria:</label>
+                <select class="form-select" id="category" name="category">
+                  <option value="" selected>Selecione...</option>
+                  <option value="FrontEnd">FrontEnd</option>
+                  <option value="BackEnd">BackEnd</option>
+                  <option value="FullStack">FullStack</option>
+                  <option value="SoftSkill">SoftSkill</option>
+                </select>                
+              </div>  
+              <div id="alert-category"></div>            
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">
+              
+                <label for="description"></label>
+                  <div class="input-group">
+                  <span class="input-group-text">Descrição:</span>
+                  <textarea class="form-control" aria-label="Descrição" id="description" name="description" minlength="10" maxlength="600" required></textarea>
+                </div>
+                <div id="alert-description"></div>
+            </a>
+          </div>
+          <div>
+            <a href="#" class="nav-link text-white">
+              <div class="mb-3">
+                <label for="youtube" class="form-label"></label>
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon3">Vídeo do YouTube:</span>
+                  <input type="url" class="form-control" id="youtube" aria-describedby="basic-addon3">
+                </div>
+                <div class="form-text">Adicione aqui o Link do Video</div>
+              </div>
+              <div id="alert-youtube"></div>
+              
+              
+            </a>
+          </div>
+          <div>
+            
+          </div>
+        </div>
+        <div href="#" class="modal-footer">
+          <button class="btn btn-light" type="submit" id="saveEdit">Salvar</button>
+          <button class="btn btn-light" type="reset" id="clearEdit">Limpar</button>
+        </div>
+        <div id="alert-save"></div>        
+      </div>
+    </div>
+  </div>
+      
+  
+  </main> 
+    <script src="js/script.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+            crossorigin="anonymous"></script>
+
+  </body>
+</
