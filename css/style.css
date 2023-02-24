@@ -10,3 +10,9 @@ body{
 }
 .deleted{}
 
+.rounded{
+  display: flexbox;
+  height: 2rem;
+  width: 100%;
+}
+
