@@ -1,15 +1,15 @@
-import { loadTips } from "./database";
+import { loadTips } from './database.js';
+import { renderTipsAndCountTips } from './renderCardTips.js';
 
-export function removeDica(event) {
-  if (window.confirm("Tem certeza que quer deletar essa dica???")) {
-    const id = event.target.dataset.id;
+export function removeDica(dicaID) {
+  if (window.confirm("Tem certeza que quer deletar essa dica???")) {    
     let listaDicas = loadTips();
-    listaDicas.forEach((dica, index) => {
-      if (dica.id === id) {
+    listaDicas.forEach((dicaAtual, index) => {
+      if (dicaAtual.id===dicaID ) {
         const x = listaDicas.splice(index, 1);
         localStorage.setItem("dicas", JSON.stringify(listaDicas));
-        console.log(x);
       }
-    });    
-  }
+    });
+    renderTipsAndCountTips(listaDicas);
+  }  
 };

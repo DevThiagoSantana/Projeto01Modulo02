@@ -1,23 +1,9 @@
-import { loadTips } from "./database";
-import { title,language,category,description,youtube,data } from "./selectors";
-import { alert } from "./util";
+import { loadTips } from "./database.js";
+import { renderTipsAndCountTips } from "./renderCardTips.js";
+import { title,language,category,description,youtube,data } from "./selectors.js";
+import { alert } from "./util.js";
 
-export function salvarDica(event) {
-    dicas = validateTips();
-    if(dicas){
-    let listaDicas = loadTips();
-    listaDicas.push(dicas);
-    localStorage.setItem("dicas", JSON.stringify(listaDicas));
-    alert("Dica salva com Sucesso", "success", "alert-save");
-    document.querySelector("form").reset();
-    }
-    
-}
-export function limpaForm(event) {
-  document.querySelector("form").reset();
-}
-export function validateTips(){
-
+export function salvarDica() {
   if (title.value.length < 5 || title.value.length > 50) {
     alert("O titulo deve ter 5 a 50 caracteres!", "danger", "alert-title");
     return;
@@ -52,5 +38,18 @@ export function validateTips(){
     youtube: youtube.value,
   };
 
-  return dica;
+  
+    if(dica){
+    let listaDicas = loadTips();
+    listaDicas.push(dica);
+    localStorage.setItem("dicas", JSON.stringify(listaDicas));
+    alert("Dica salva com Sucesso", "success", "alert-save");
+    document.querySelector("form").reset();
+    }
+    const itens = loadTips();
+    renderTipsAndCountTips(itens);
+    
+}
+export function limpaForm(event) {
+  document.querySelector("form").reset();
 }

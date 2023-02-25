@@ -1,14 +1,15 @@
-import { renderTipsAndCountTips } from "./renderCardTips";
-import { loadTips } from "./database";
+import { renderTipsAndCountTips } from "./renderCardTips.js";
+import { loadTips } from "./database.js";
 
 export function searchInkeyUp(event) {
-	const searched = event.target.value;
+  event.preventDefault();
 
+	const searched = event.target.value;
   const tipsFound =tipsFilterInSearch(searched);
 
   tipsFound.length > 0 
   ? renderTipsAndCountTips(tipsFound)
-  :(cardsDicas.innerHTML = 'Nenhum produto encontrado');
+  :cardsDicas.innerHTML = 'Nenhum produto encontrado';
 }
 
 export function tipsFilterInSearch(searched) {

@@ -1,14 +1,15 @@
-function editarDica(event) {
-  const id = event.target.dataset.id;
-  let listaDicas = JSON.parse(localStorage.getItem("dicas")) || [];
-  listaDicas.forEach((dica) => {
-    if (dica.id === id) {
-      console.log(dica);
+import { loadTips } from "./database";
+
+export function editarDica(dica) {
+
+  let listaDicas = loadTips
+  console.log("ok entrei")
+  listaDicas.forEach((dicaAtual) => {
+    if ( dicaAtual.id=== dica) {     
       const myModal = document.getElementById("myModal");
-      myModal.style.display = "block";
-      myModal.addEventListener("shown.bs.modal", () => {
-        myInput.focus();
-      });
+      myModal.style.display = "block";      
+      document.getElementById("title-modal").value = dica.title;
+      
 
       return;
     }

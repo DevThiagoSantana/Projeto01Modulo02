@@ -133,28 +133,29 @@
          
     
       </form>
+      <!-- inicio do nav header -->
       <div class="" style="width: 100%;">
         <nav class="navbar navbar-expand-lg bg-success ">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
               <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> DEVTips</i> 
             </a>
-            <p class=" row ">        
-              <a class="btn btn-light disabled"  role="button" aria-disabled="true">Total: <div class="justify-content-center" id="item-total-count"></div></a>          
-              <a class="btn btn-light disabled"  role="button" aria-disabled="true">FrontEnd: <div class="justify-content-center" id="item-FrontEnd"></div></a>     
-              <a class="btn btn-light disabled"  role="button" aria-disabled="true">BackEnd: <div class="justify-content-center" id="item-BackEnd"></div></a>
-              <a class="btn btn-light disabled"  role="button" aria-disabled="true">FullStack: <div class="justify-content-center" id="item-FullStack"></div></a>
-              <a class="btn btn-light disabled"  role="button" aria-disabled="true">SoftSkill: <div class="justify-content-center" id="item-SoftSkill"></div></a>      
-            </p>
+            <div style="display: flex;">        
+              <div class="btn btn-light disabled"  role="button" aria-disabled="true"> Total: <a class="justify-content-center" id="item-total-count"></a></div>          
+              <div class="btn btn-light disabled"  role="button" aria-disabled="true">FrontEnd: <a class="justify-content-center" id="item-FrontEnd"></a></div>     
+              <div class="btn btn-light disabled"  role="button" aria-disabled="true">BackEnd: <a class="justify-content-center" id="item-BackEnd"></a></div>
+              <div class="btn btn-light disabled"  role="button" aria-disabled="true">FullStack: <a class="justify-content-center" id="item-FullStack"></a></div>
+              <div class="btn btn-light disabled"  role="button" aria-disabled="true">SoftSkill: <a class="justify-content-center" id="item-SoftSkill"></a></div>      
+            </div>
       
             <form class="d-flex p-2" role="search">
-              <input class="form-control me-2" style="width: 50%;" name="inputSearch" id="inputSearch"type="search" placeholder="Procurar" aria-label="Procurar">
+              <input class="form-control me-2" style="width: 50%;" name="searchInput" id="searchInput"type="search" placeholder="Procurar" aria-label="Procurar">
             </form>
 
           </div >
         </nav >
         <!-- inicio dos cards   -->
-        <div class="scroll row justify-content" id="cards-dicas"></div>
+        <div class="scroll row" id="cards-dicas"></div>
       </div>   
       
       <!-- Modal Editor -->
@@ -174,11 +175,10 @@
                   <div class="input-group mb-3">
                     <span class="input-group-text " id="basic-addon1">Título:</span>
                     <input type="text" 
-                            class="form-control" 
-                            placeholder=${dica.title} 
+                            class="form-control"  
                             aria-label="Título" 
                             aria-describedby="basic-addon1"
-                            id="title" name="title" 
+                            id="title-modal" name="title" 
                             minlength="5" 
                             maxlength="50" 
                             required
@@ -193,11 +193,10 @@
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Linguagem/Skill:</span>
                     <input type="text" 
-                            class="form-control" 
-                            placeholder="Linguagem/Skill" 
+                            class="form-control"  
                             aria-label="Linguagem/Skill" 
                             aria-describedby="basic-addon1" 
-                            id="language" 
+                            id="language-modal" 
                             name="language" 
                             minlength="2" 
                             maxlength="20" 
@@ -211,7 +210,7 @@
                 <a href="#" class="nav-link text-white">  
                   <div class="input-group mb-3">
                     <label class="input-group-text" for="category">Categoria:</label>
-                    <select class="form-select" id="category" name="category">
+                    <select class="form-select" id="category-modal" name="category">
                       <option value="" selected>Selecione...</option>
                       <option value="FrontEnd">FrontEnd</option>
                       <option value="BackEnd">BackEnd</option>
@@ -227,7 +226,7 @@
                     <label for="description"></label>
                     <div class="input-group">
                       <span class="input-group-text">Descrição:</span>
-                      <textarea class="form-control" aria-label="Descrição" id="description" name="description" minlength="10" maxlength="600" required></textarea>
+                      <textarea class="form-control" aria-label="Descrição" id="description-modal" name="description" minlength="10" maxlength="600" required></textarea>
                     </div>
                     <div id="alert-description"></div>
                 </a>
@@ -238,7 +237,7 @@
                     <label for="youtube" class="form-label"></label>
                     <div class="input-group">
                       <span class="input-group-text" id="basic-addon3">Vídeo do YouTube:</span>
-                      <input type="url" class="form-control" id="youtube" aria-describedby="basic-addon3">
+                      <input type="url" class="form-control" id="youtube-modal" aria-describedby="basic-addon3">
                     </div>
                     <div class="form-text">Adicione aqui o Link do Video</div>
                   </div>
@@ -257,8 +256,8 @@
       
   
     </main> 
-    <script type ="module" src="./src/script.js"></script>
-
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" 
             integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" 
             crossorigin="anonymous" 
@@ -269,6 +268,8 @@
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
             crossorigin="anonymous">
     </script>
+
+    <script type ="module" src="./src/script.js"></script>
 
     
   </body>

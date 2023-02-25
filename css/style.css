@@ -7,6 +7,7 @@ body{
   overflow-x: hidden;
   display: block;
   height: 90vh;
+  background-image: -webkit-image-set();
 }
 .deleted{}
 
@@ -14,5 +15,10 @@ body{
   display: flexbox;
   height: 2rem;
   width: 100%;
+}
+
+.card{
+  display: inline-block;
+  background-color: #b2d9f7;
 }
 
