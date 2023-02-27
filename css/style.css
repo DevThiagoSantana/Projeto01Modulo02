@@ -2,6 +2,13 @@ body{
   overflow:hidden;
 }
 
+.formulario{
+  background-color: #382933;
+}
+.navbar{
+  background-color: #3B5249;
+}
+
 .scroll{
   overflow-y: scroll;
   overflow-x: hidden;
@@ -11,24 +18,32 @@ body{
   width: 100%;  
   margin-left: auto;
   margin-right: auto;
+  background-color: #519872;
 }
-.rounded{
-  display: flexbox;
-  height: 2rem;
-  width: 100%;
-}
-
 .card{
   display: inline-block;
-  background-color: #b2d9f7;
+  background-color: #A4B494;
   padding: 1.5rem;
   border-radius: 1rem;
   font-display: grid;
   margin-top: 2rem;
-
+}
+  .rounded{
+    display: flexbox;
+    height: 2rem;
+    width: 100%;
+  }
+.count{
+  display: flex;
+  margin-right: 3rem;
+}
+.number{
+  margin-left: 2rem;
+  font-size: larger;
+}
   
 
 
-}
+
 
 
