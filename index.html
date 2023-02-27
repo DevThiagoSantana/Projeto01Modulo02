@@ -164,21 +164,22 @@
         <div class = "modal-dialog">
           <div class="modal-content text-bg-dark">
             <div class=" modal-header">
-              <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> DEVTips - Editar Dicas</i>  
+              <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> DEVTips - Editar Dicas</i> 
+              <input type="hidden" id ="dicaIdEdit"name="dicaIdEdit" value="dicaIdEdit" readonly/>
               <button type="button" class="btn btn-close btn-light" data-bs-dismiss ="modal"></button>
             </div>
             
             <div class="modal-body" >
               <div class="nav-item "">
                 <a href="#" class="nav-link text-white >              
-                  <label for="title"></label>
+                  <label for="titleModal"></label>
                   <div class="input-group mb-3">
                     <span class="input-group-text " id="basic-addon1">Título:</span>
                     <input type="text" 
                             class="form-control"  
                             aria-label="Título" 
                             aria-describedby="basic-addon1"
-                            id="title-modal" name="title" 
+                            id="titleModal" name="titleModal" 
                             minlength="5" 
                             maxlength="50" 
                             required
@@ -189,15 +190,15 @@
               </div>
               <div>
                 <a href="#" class="nav-link text-white">              
-                  <label for="language"></label>
+                  <label for="languageModal"></label>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Linguagem/Skill:</span>
                     <input type="text" 
                             class="form-control"  
                             aria-label="Linguagem/Skill" 
                             aria-describedby="basic-addon1" 
-                            id="language-modal" 
-                            name="language" 
+                            id="languageModal" 
+                            name="languageModal" 
                             minlength="2" 
                             maxlength="20" 
                             required
@@ -209,8 +210,8 @@
               <div>
                 <a href="#" class="nav-link text-white">  
                   <div class="input-group mb-3">
-                    <label class="input-group-text" for="category">Categoria:</label>
-                    <select class="form-select" id="category-modal" name="category">
+                    <label class="input-group-text" for="categoryModal">Categoria:</label>
+                    <select class="form-select" id="categoryModal" name="categoryModal">
                       <option value="" selected>Selecione...</option>
                       <option value="FrontEnd">FrontEnd</option>
                       <option value="BackEnd">BackEnd</option>
@@ -223,10 +224,10 @@
               </div>
               <div>
                 <a href="#" class="nav-link text-white">
-                    <label for="description"></label>
+                    <label for="descriptionModal"></label>
                     <div class="input-group">
                       <span class="input-group-text">Descrição:</span>
-                      <textarea class="form-control" aria-label="Descrição" id="description-modal" name="description" minlength="10" maxlength="600" required></textarea>
+                      <textarea class="form-control" aria-label="Descrição" id="descriptionModal" name="descriptionModal" minlength="10" maxlength="600" required></textarea>
                     </div>
                     <div id="alert-description"></div>
                 </a>
@@ -234,10 +235,10 @@
               <div>
                 <a href="#" class="nav-link text-white">
                   <div class="mb-3">
-                    <label for="youtube" class="form-label"></label>
+                    <label for="youtubeModal" class="form-label"></label>
                     <div class="input-group">
                       <span class="input-group-text" id="basic-addon3">Vídeo do YouTube:</span>
-                      <input type="url" class="form-control" id="youtube-modal" aria-describedby="basic-addon3">
+                      <input type="url" class="form-control" id="youtubeModal" aria-describedby="basic-addon3">
                     </div>
                     <div class="form-text">Adicione aqui o Link do Video</div>
                   </div>
@@ -247,7 +248,7 @@
             </div>
             <div href="#" class="modal-footer">
               <button class="btn btn-light" type="submit" id="saveEdit">Salvar</button>
-              <button class="btn btn-light" type="reset" id="clearEdit">Limpar</button>
+              <button class="btn btn-light" type="reset" id="clear">Limpar</button>
             </div>
             <div id="alert-save"></div>        
           </div>

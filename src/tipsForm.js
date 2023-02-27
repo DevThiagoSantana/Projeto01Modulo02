@@ -50,6 +50,54 @@ export function salvarDica() {
     renderTipsAndCountTips(itens);
     
 }
+export function salvarDicaEditada(event) {
+  if (titleModal.value.length < 5 || titleModal.value.length > 50) {
+    alert("O titulo deve ter 5 a 50 caracteres!", "danger", "alert-title");
+    return;
+  }
+  if (languageModal.value.length < 2 || languageModal.value.length > 20) {
+    alert(
+      "A linguagem/skill deve ter entre 2 e 20 caracteres!",
+      "danger",
+      "alert-language"
+    );
+    return;
+  }
+  if (categoryModal.value === "") {
+    alert("Você deve selecionar uma categoria!", "danger", "alert-category");
+    return;
+  }
+  if (descriptionModal.value.length < 10 || descriptionModal.value.length > 600) {
+    alert(
+      "A descrição deve ter entre 10 e 600 caracteres!",
+      "danger",
+      "alert-description"
+    );
+    return;
+  }
+
+  const dicaEditada = {
+    id: dicaIdEdit.value,
+    title: titleModal.value,
+    language: languageModal.value,
+    category: categoryModal.value,
+    description: descriptionModal.value,
+    youtube: youtubeModal.value,
+  };
+
+  console.log("editado");
+  console.log(dicaEditada);
+    // if(dica){
+    // let listaDicas = loadTips();
+    // listaDicas.push(dica);
+    // localStorage.setItem("dicas", JSON.stringify(listaDicas));
+    // alert("Dica salva com Sucesso", "success", "alert-save");
+    // document.querySelector("form").reset();
+    // }
+    // const itens = loadTips();
+    // renderTipsAndCountTips(itens);
+    
+}
 export function limpaForm(event) {
   document.querySelector("form").reset();
 }

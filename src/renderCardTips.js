@@ -28,10 +28,8 @@ export function renderTips(dicas) {
                     `;
             
             if (dica.youtube.length > 0) {
-              card+=`<a class="btn btn-outline-dark card-link" href="${dica.youtube}" target="_blank">
-                      <img src="./img/youtube.svg">
-                      </a>
-                      `;
+              card+=` <img src="./img/youtube.svg" card-link="${dica.youtube}" >
+               `;
               } 
             card+= `</div>`;
             cards+=card;
