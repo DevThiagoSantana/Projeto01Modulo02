@@ -18,7 +18,7 @@ export function renderTips(dicas) {
    }else{
           dicas.forEach((dica) => {            
             let card ='';
-            card = ` <div class =" card col-md-4 m-4">       
+            card = ` <div class =" card col-md-3 m-3 col-sm-1">       
                       <i class="bi bi-journal-bookmark-fill" style="display: flexbox; font-size: xx-large;"> ${dica.title}</i>
                       <p class="card-language">Linguagem: ${dica.language}</p>
                       <p class="card-language">Categoria: ${dica.category}</p>
@@ -34,7 +34,7 @@ export function renderTips(dicas) {
             card+= `</div>`;
             cards+=card;
 
-        });}
+        });};
         cardsDicas.innerHTML = cards;      
 }
 
