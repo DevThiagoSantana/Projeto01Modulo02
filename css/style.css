@@ -3,12 +3,19 @@ body{
 }
 
 .formulario{
-  background-color: #382933;
+  background-color: #439A97;
 }
 .navbar{
-  background-color: #3B5249;
+  background-color: #62B6B7;
 }
-
+.card{
+  display: inline-block;
+  background-color: #97DECE;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-display: grid;
+  margin-top: 2rem;
+}
 .scroll{
   overflow-y: scroll;
   overflow-x: hidden;
@@ -18,15 +25,7 @@ body{
   width: 100%;  
   margin-left: auto;
   margin-right: auto;
-  background-color: #519872;
-}
-.card{
-  display: inline-block;
-  background-color: #A4B494;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  font-display: grid;
-  margin-top: 2rem;
+  background-color: #CBEDD5;
 }
   .rounded{
     display: flexbox;

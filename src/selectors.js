@@ -9,3 +9,4 @@ export const botaoLimpar = document.querySelector('button[id="clear"]');
 export const botaoSalvarEdit= document.querySelector('button[id="saveEdit"]')
 export const search = document.querySelector('#searchInput');
 export const cardsDicas = document.querySelector("#cards-dicas");
+

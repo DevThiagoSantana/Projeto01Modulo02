@@ -1,12 +1,11 @@
 import { renderTipsAndCountTips } from './renderCardTips.js';
 import { salvarDica,limpaForm, salvarDicaEditada } from './tipsForm.js';
 import { loadTips } from './database.js';
-import { botaoSalvar,botaoLimpar,search } from './selectors.js';
+import { botaoSalvar,botaoLimpar,search,cardsDicas,botaoSalvarEdit } from './selectors.js';
 import { searchInkeyUp } from './filter.js';
 import { removeDica } from './remove.js';
 import { editarDica } from './editTips.js';
 import { AcessLink } from './link.js';
-import { botaoSalvarEdit } from './selectors.js';
 
 
 botaoSalvar.addEventListener("click", salvarDica);
@@ -15,7 +14,9 @@ botaoSalvarEdit.addEventListener("click",salvarDicaEditada)
 
 search.addEventListener('keyup', _.debounce(searchInkeyUp, 400));
 
-document.body.addEventListener('click', function (event) {
+
+
+cardsDicas.addEventListener('click', function (event) {
 	event.preventDefault();
 
 	const dicaRemoveId = event.target.getAttribute('data-remove-id');
@@ -25,7 +26,7 @@ document.body.addEventListener('click', function (event) {
 	if (dicaRemoveId) {
 		removeDica(dicaRemoveId);
 	}
-  if(dicaEditId){
+  if(dicaEditId){		 
     editarDica(dicaEditId)
   }
 	if(dicaLink){
